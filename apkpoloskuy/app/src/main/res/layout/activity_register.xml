@@ -111,6 +111,7 @@
         app:backgroundTint="@color/charcoal" />
 
     <TextView
+        android:id="@+id/ktTolog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -121,7 +122,22 @@
         android:layout_marginLeft="115dp"
         android:layout_marginBottom="40dp"
         android:gravity="center"
-        android:text="Sudah punya akun?klik DISINI"
+        android:text="Sudah punya akun?klik"
         android:textColor="@color/charcoal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginRight="117dp"
+        android:layout_marginBottom="41dp"
+        android:id="@+id/tvTolog"
+        android:layout_toRightOf="@+id/ktTolog"
+        android:text="@string/mvTolog" />
 
 </RelativeLayout>
