@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,6 +14,7 @@
         android:layout_marginTop="150dp"
         android:background="@drawable/bg_login_bawah"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
@@ -24,13 +25,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="114dp"
-        android:layout_marginLeft="114dp"
-        android:layout_marginTop="57dp"
         android:text="Register"
         android:textColor="@color/white"
         android:textSize="50dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edt_name"
@@ -42,13 +45,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginLeft="54dp"
-        android:layout_marginTop="175dp"
-        android:layout_marginEnd="59dp"
+        android:layout_marginTop="92dp"
         android:hint="nama lengkap"
-        android:layout_marginRight="59dp"
-        android:textColor="@color/charcoal" />
+        android:textColor="@color/charcoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReg"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edt_mail"
@@ -56,9 +60,14 @@
         android:layout_height="55dp"
         android:layout_below="@+id/edt_name"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
         android:hint="email"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/charcoal" />
+        android:textColor="@color/charcoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edt_pass"
@@ -66,9 +75,14 @@
         android:layout_height="55dp"
         android:layout_below="@+id/edt_mail"
         android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:hint="password"
-        android:textColor="@color/charcoal" />
+        android:textColor="@color/charcoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_mail"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edt_no"
@@ -76,9 +90,14 @@
         android:layout_height="55dp"
         android:layout_below="@+id/edt_pass"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:hint="no telp"
-        android:textColor="@color/charcoal" />
+        android:textColor="@color/charcoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_pass"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edt_addr"
@@ -86,9 +105,14 @@
         android:layout_height="55dp"
         android:layout_below="@+id/edt_no"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:hint="alamat"
-        android:textColor="@color/charcoal" />
+        android:textColor="@color/charcoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_no"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnreg"
@@ -100,15 +124,15 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button"
         android:gravity="center"
         android:text="Register"
-        app:backgroundTint="@color/charcoal" />
+        app:backgroundTint="@color/charcoal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_addr"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/ktTolog"
@@ -118,26 +142,40 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="115dp"
-        android:layout_marginLeft="115dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="24dp"
         android:gravity="center"
         android:text="Sudah punya akun?klik"
-        android:textColor="@color/charcoal" />
+        android:textColor="@color/charcoal"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnreg"
+        tools:ignore="MissingConstraints" />
 
     <TextView
+        android:id="@+id/tvTolog"
         android:layout_width="wrap_content"
         android:layout_height="17dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginEnd="117dp"
-        android:layout_marginRight="117dp"
-        android:layout_marginBottom="41dp"
-        android:id="@+id/tvTolog"
+        android:layout_marginTop="4dp"
         android:layout_toRightOf="@+id/ktTolog"
-        android:text="@string/mvTolog" />
+        android:text="@string/mvTolog"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ktTolog"
+        tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
