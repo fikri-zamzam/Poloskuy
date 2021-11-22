@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_putih_sedikit"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:text="Alamat Pengiriman :"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:background="@drawable/bg_charcoal"
+
+    <TextView
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Dyah Safitri Reswandari (085771228829292) Jati Luhur, Jawa Timur"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+
+    <TextView
+        android:layout_width="500dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/bg_charcoal"
+        android:text="Transfer ke Nomor Rekening :"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+    <TextView
+        android:layout_width="200dp"
+        android:layout_marginLeft="110dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="275dp"
+        android:text="0092-8838-1183783814"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:background="@color/white"
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Total Pembayaran :"
+        android:layout_marginTop="600dp"
+        android:textAlignment="center"
+        android:layout_marginLeft="210dp"
+        android:textSize="20sp"
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:text="Rp. 235.00"
+        android:layout_marginTop="620dp"
+        android:textAlignment="center"
+        android:layout_marginLeft="174dp"
+        android:textSize="20sp"
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button"
+        android:text="SELESAI"
+        android:textSize="14sp"
+        app:backgroundTint="#36454F" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button"
+        android:text="Chat Penjual"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:backgroundTint="#FFFFFF" />
+
+</RelativeLayout>

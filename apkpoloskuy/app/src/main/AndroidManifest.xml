@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Apkpoloskuy">
         <activity
+            android:name=".myfragment.CheckoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".DashboarActivity"
             android:exported="false" />
         <activity
