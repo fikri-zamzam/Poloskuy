@@ -13,9 +13,6 @@
             android:name=".DashboarActivity"
             android:exported="false" />
         <activity
-            android:name=".setingakunActivity"
-            android:exported="true" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity

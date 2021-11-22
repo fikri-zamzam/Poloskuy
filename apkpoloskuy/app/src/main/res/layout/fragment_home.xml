@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".myfragment.HomeFragment">
+
+    <!--membuat toolbar dan isinya-->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="411dp"
+        android:layout_height="65dp"
+        android:background="@color/charcoal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="18dp"
+                android:background="@drawable/edttv"
+                android:id="@+id/cari"
+                android:hint="Cari disini"
+                android:layout_gravity="center"
+                />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgb"
+                android:src="@drawable/ic_baseline_shopping_cart_24"
+                android:layout_marginLeft="15dp"
+                android:layout_gravity="center"
+                />
+
+            <View
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:id="@+id/view"
+                android:background="@drawable/bulat"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"/>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--banner-->
+    <ImageView
+        android:layout_width="411dp"
+        android:layout_height="196dp"
+        android:src="@drawable/carashboard" />
+    <!--ucapan-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sambut"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal" />
+    <!--produk-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produk"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="21dp"
+        android:layout_marginLeft="7dp"
+        android:id="@+id/tvprod"/>
+    <!--barang tampil-->
+
+
+
+
+
+    <!--kategori-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kategori"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="21dp"
+        android:layout_marginLeft="7dp"
+        android:id="@+id/tvKategori"/>
+    <!--pembuatan base layout untuk grid-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--pembuatan grid untuk card view-->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="1"
+            android:columnCount="4"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <!--cardview 1-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/kate1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+                <!--penataan layout pada isi cardview-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp">
+                    <!--image kategori-->
+                    <ImageView
+                        android:id="@+id/imgkate1"
+                        android:layout_width="49.23dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/hoodie"
+                        />
+                    <!--judul kategori-->
+                    <TextView
+                        android:id="@+id/tvkate1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hoodie"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--cardview 2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/kate2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+                <!--penataan layout pada cardview-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp">
+                    <!--image pada cardview-->
+                    <ImageView
+                        android:id="@+id/imgkate2"
+                        android:layout_width="49.23dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/runninshoe"
+                        />
+                    <!--judul kategori-->
+                    <TextView
+                        android:id="@+id/tvkate2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shoes"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <!--cardview 3-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/kate3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+                <!--penataan pada cardview-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp">
+                    <!--image pada cardview-->
+                    <ImageView
+                        android:id="@+id/imgkate3"
+                        android:layout_width="49.23dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/trousers"
+                        />
+                    <!--judul kategori-->
+                    <TextView
+                        android:id="@+id/tvkate3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Celana"/>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--cardview 4-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/kate4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+                <!--penataan pada cardview-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp">
+                    <!--image cardview-->
+                    <ImageView
+                        android:id="@+id/imgkate4"
+                        android:layout_width="49.23dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/cap"
+                        />
+                    <!--judul kategori-->
+                    <TextView
+                        android:id="@+id/tvkate4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Topi"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
