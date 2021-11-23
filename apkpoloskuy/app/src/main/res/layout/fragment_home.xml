@@ -56,36 +56,190 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sambut"
-        android:textSize="30dp"
+        android:textSize="22sp"
         android:textAlignment="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:gravity="center_horizontal" />
     <!--produk-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Produk"
+        android:layout_marginTop="17dp"
         android:fontFamily="sans-serif-medium"
-        android:textSize="21dp"
+        android:textSize="18sp"
         android:layout_marginLeft="7dp"
         android:id="@+id/tvprod"/>
-    <!--barang tampil-->
 
+
+    <!--barang tampil-->
+<LinearLayout
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:rowCount="1"
+        android:columnCount="3"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/barang1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+            <!--penataan layout pada isi cardview-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+                <!--image kategori-->
+                <ImageView
+                    android:id="@+id/ftbarang1"
+                    android:layout_width="54dp"
+                    android:layout_height="69dp"
+                    android:src="@drawable/sepokat"
+                    />
+                <!--judul kategori-->
+                <TextView
+                    android:id="@+id/tvbarang1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hoodie"
+                    />
+
+                <TextView
+                    android:id="@+id/hargaBarang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp.500000"
+                    />
+                <TextView
+                    android:id="@+id/lokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jember"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--barang 2-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/barang2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+            <!--penataan layout pada isi cardview-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+                <!--image kategori-->
+                <ImageView
+                    android:id="@+id/ftbarang2"
+                    android:layout_width="54dp"
+                    android:layout_height="69dp"
+                    android:src="@drawable/sepokat"
+                    />
+                <!--judul kategori-->
+                <TextView
+                    android:id="@+id/tvbarang2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hoodie"
+                    />
+
+                <TextView
+                    android:id="@+id/hargaBarang2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp.500000"
+                    />
+                <TextView
+                    android:id="@+id/lokasi2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jember"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--barang3-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/barang3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+            <!--penataan layout pada isi cardview-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:padding="10dp">
+                <!--image kategori-->
+                <ImageView
+                    android:id="@+id/ftbarang3"
+                    android:layout_width="54dp"
+                    android:layout_height="69dp"
+                    android:src="@drawable/sepokat"
+                    />
+                <!--judul kategori-->
+                <TextView
+                    android:id="@+id/tvbarang3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hoodie"
+                    />
+
+                <TextView
+                    android:id="@+id/hargaBarang3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rp.500000"
+                    />
+                <TextView
+                    android:id="@+id/lokasi3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jember"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+</LinearLayout>
 
 
 
 
     <!--kategori-->
     <TextView
+        android:layout_marginTop="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kategori"
         android:fontFamily="sans-serif-medium"
-        android:textSize="21dp"
+        android:textSize="18sp"
         android:layout_marginLeft="7dp"
         android:id="@+id/tvKategori"/>
     <!--pembuatan base layout untuk grid-->
     <LinearLayout
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

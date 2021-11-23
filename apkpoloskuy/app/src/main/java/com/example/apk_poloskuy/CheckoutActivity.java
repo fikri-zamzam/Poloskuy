@@ -1,4 +1,4 @@
-package com.example.apk_poloskuy.myfragment;
+package com.example.apk_poloskuy;
 
 import androidx.appcompat.app.AppCompatActivity;
 

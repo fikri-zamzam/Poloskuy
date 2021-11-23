@@ -48,7 +48,7 @@
         android:layout_marginBottom="44dp"
         android:text="LOGIN"
         android:textColor="@color/charcoal"
-        android:textSize="44sp"
+        android:textSize="54sp"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
