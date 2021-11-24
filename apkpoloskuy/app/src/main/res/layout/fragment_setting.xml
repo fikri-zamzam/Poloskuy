@@ -55,7 +55,7 @@
         android:layout_marginLeft="30dp"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/nama"
         android:layout_width="260dp"
         android:layout_height="35dp"
@@ -67,7 +67,7 @@
         android:layout_marginTop="10dp"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/email"
         android:layout_width="260dp"
         android:layout_height="35dp"
@@ -78,7 +78,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         />
-    <TextView
+    <EditText
         android:id="@+id/pass"
         android:layout_width="260dp"
         android:layout_height="35dp"
@@ -91,7 +91,7 @@
         android:layout_marginTop="10dp"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/alamat"
         android:layout_width="260dp"
         android:layout_height="35dp"
@@ -103,7 +103,7 @@
         android:layout_marginTop="10dp"
         />
 
-    <TextView
+    <EditText
         android:id="@+id/no_telpon"
         android:layout_width="260dp"
         android:layout_height="35dp"
