@@ -35,11 +35,11 @@
                 android:layout_gravity="center"
                 />
 
-            <View
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:id="@+id/view"
-                android:background="@drawable/bulat"
+                android:id="@+id/viewFoto"
+                android:src="@drawable/armuh"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"/>
 
