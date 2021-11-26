@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Apkpoloskuy">
         <activity
+            android:name=".myfragment.DetailBarangActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckoutActivity"
             android:exported="false" />
         <activity
