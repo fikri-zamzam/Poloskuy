@@ -44,7 +44,7 @@
         android:layout_height="200dp"
         android:src="@drawable/armuh"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="30dp"/>
 
     <ImageButton
         android:id="@+id/imgCam"
@@ -53,18 +53,6 @@
         android:layout_gravity="center"
         android:src="@drawable/iccamera_alt"
         android:layout_marginLeft="30dp"
-        />
-
-    <EditText
-        android:id="@+id/nama"
-        android:layout_width="260dp"
-        android:layout_height="35dp"
-        android:background="@drawable/button"
-        android:textColor="@color/white"
-        android:text="nama lengkap"
-        android:textAlignment="center"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
         />
 
     <EditText
@@ -78,6 +66,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
         />
+
     <EditText
         android:id="@+id/pass"
         android:layout_width="260dp"
@@ -92,12 +81,12 @@
         />
 
     <EditText
-        android:id="@+id/alamat"
+        android:id="@+id/nama"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:background="@drawable/button"
         android:textColor="@color/white"
-        android:text="alamat"
+        android:text="nama lengkap"
         android:textAlignment="center"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
@@ -115,13 +104,36 @@
         android:layout_marginTop="10dp"
         />
 
+    <EditText
+        android:layout_width="260dp"
+        android:layout_height="35dp"
+        android:id="@+id/gender"
+        android:background="@drawable/button"
+        android:textColor="@color/white"
+        android:text="gender"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/alamat"
+        android:layout_width="260dp"
+        android:layout_height="35dp"
+        android:background="@drawable/button"
+        android:textColor="@color/white"
+        android:text="alamat"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
 
     <Button
         android:id="@+id/logout_btn"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/button"
         android:text="Logout"
         android:textStyle="bold"
