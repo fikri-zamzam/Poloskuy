@@ -36,7 +36,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edt_name"
+        android:id="@+id/edtReg_email"
         android:layout_width="298dp"
         android:layout_height="55dp"
         android:layout_alignParentStart="true"
@@ -55,10 +55,10 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edt_mail"
+        android:id="@+id/edtReg_password"
         android:layout_width="298dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/edt_name"
+        android:layout_below="@+id/edtReg_email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:hint="password"
@@ -66,14 +66,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_name"
+        app:layout_constraintTop_toBottomOf="@+id/edtReg_email"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edt_pass"
+        android:id="@+id/edtReg_fullname"
         android:layout_width="298dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/edt_mail"
+        android:layout_below="@+id/edtReg_password"
         android:layout_centerInParent="true"
         android:layout_marginTop="12dp"
         android:hint="fullname"
@@ -81,14 +81,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_mail"
+        app:layout_constraintTop_toBottomOf="@+id/edtReg_password"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edt_no"
+        android:id="@+id/edtReg_noTelp"
         android:layout_width="298dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/edt_pass"
+        android:layout_below="@+id/edtReg_fullname"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:hint="no telp"
@@ -96,14 +96,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_pass"
+        app:layout_constraintTop_toBottomOf="@+id/edtReg_fullname"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edt_gender"
+        android:id="@+id/edtReg_gender"
         android:layout_width="298dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/edt_no"
+        android:layout_below="@+id/edtReg_noTelp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:hint="gender"
@@ -111,14 +111,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_no"
+        app:layout_constraintTop_toBottomOf="@+id/edtReg_noTelp"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/edt_addr"
+        android:id="@+id/edtReg_alamat"
         android:layout_width="298dp"
         android:layout_height="55dp"
-        android:layout_below="@+id/edt_no"
+        android:layout_below="@+id/edtReg_noTelp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         android:hint="alamat"
@@ -126,14 +126,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_no"
+        app:layout_constraintTop_toBottomOf="@+id/edtReg_noTelp"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnreg"
+        android:id="@+id/btnRegister"
         android:layout_width="189dp"
         android:layout_height="49dp"
-        android:layout_below="@+id/edt_addr"
+        android:layout_below="@+id/edtReg_alamat"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -146,7 +146,7 @@
         app:backgroundTint="@color/charcoal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_addr"
+        app:layout_constraintTop_toBottomOf="@+id/edtReg_alamat"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -165,7 +165,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnreg"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegister"
         tools:ignore="MissingConstraints" />
 
     <TextView
