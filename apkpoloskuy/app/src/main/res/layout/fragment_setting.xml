@@ -93,7 +93,7 @@
         />
 
     <EditText
-        android:id="@+id/no_telpon"
+        android:id="@+id/no_telp"
         android:layout_width="260dp"
         android:layout_height="35dp"
         android:background="@drawable/button"
@@ -129,7 +129,7 @@
 
 
     <Button
-        android:id="@+id/logout_btn"
+        android:id="@+id/btn_logout"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_gravity="center"

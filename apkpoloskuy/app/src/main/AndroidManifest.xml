@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Apkpoloskuy">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".KeranjangActivity"
             android:exported="false" />
         <activity
@@ -22,13 +25,13 @@
             android:name=".CheckoutActivity"
             android:exported="false" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".DashboardActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

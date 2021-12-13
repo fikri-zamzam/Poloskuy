@@ -1,5 +1,7 @@
 package com.example.apk_poloskuy.myfragment;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +9,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.content.Context;
 
+import com.example.apk_poloskuy.DashboardActivity;
+import com.example.apk_poloskuy.Konek.SharedPrefrencesHelper;
+import com.example.apk_poloskuy.LoginActivity;
 import com.example.apk_poloskuy.R;
 
 /**
@@ -56,11 +65,56 @@ public class SettingFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    //deklarasi variabel
+    private EditText SFemail, SFpass, SFnama, SFno_telp, SFgender,SFalamat;
+    private Button Logout;
+    private SharedPrefrencesHelper sharedPrefrencesHelper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_setting, container, false);
+        SFemail = view.findViewById(R.id.email);
+        SFpass  = view.findViewById(R.id.pass);
+        SFnama = view.findViewById(R.id.nama);
+        SFno_telp = view.findViewById(R.id.no_telp);
+        SFgender = view.findViewById(R.id.gender);
+        SFalamat = view.findViewById(R.id.alamat);
+
+        Logout = view.findViewById(R.id.btn_logout);
+        sharedPrefrencesHelper = new SharedPrefrencesHelper(SettingFragment.super.getContext());
+        // Verifikasi apakah user sudah login atau belum
+        String status = sharedPrefrencesHelper.getStatus();
+        if (status.equals("0")) {
+            Intent intent = new Intent(this.getActivity(), LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+            startActivity(intent);
+            getActivity().finish();
+        }
+
+        //Mengambil data dari akun user
+        SFemail.setText(sharedPrefrencesHelper.getEmail());
+        SFnama.setText(sharedPrefrencesHelper.getFullname());
+        SFno_telp.setText(sharedPrefrencesHelper.getNomorTelfon());
+        SFgender.setText(sharedPrefrencesHelper.getGender());
+        SFalamat.setText(sharedPrefrencesHelper.getAlamat());
+
+        // do code here
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPrefrencesHelper.setEmail(null);
+                sharedPrefrencesHelper.setPassword(null);
+                sharedPrefrencesHelper.setFullname(null);
+                sharedPrefrencesHelper.setNomorTelfon(null);
+                sharedPrefrencesHelper.setGender(null);
+                sharedPrefrencesHelper.setAlamat(null);
+                startActivity(new Intent(SettingFragment.super.getContext(), LoginActivity.class));
+                ((Activity) getActivity()).overridePendingTransition(0, 0);
+            }
+        });
+
+        return view;
     }
 }
