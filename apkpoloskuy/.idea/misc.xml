@@ -3,10 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/drawable/bg_border.xml" value="0.2203125" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/drawable/bulat.xml" value="0.2203125" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/drawable/button.xml" value="0.2203125" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/drawable/edttv.xml" value="0.2203125" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/drawable/favorit.xml" value="0.2203125" />
         <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_checkout.xml" value="0.20416666666666666" />
         <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_dashboar.xml" value="0.20416666666666666" />
-        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_detail_barang.xml" value="0.22" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_dashboard.xml" value="0.20416666666666666" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_detail_barang.xml" value="0.33" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_keranjang.xml" value="0.33" />
         <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/activity_main.xml" value="0.19293478260869565" />
+        <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Github desktop/Poloskuy-client-mobile/apkpoloskuy/app/src/main/res/layout/fragment_setting.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/apkpoloskuy/app/src/main/res/drawable/bg_login_bawah.xml" value="0.290625" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/apkpoloskuy/app/src/main/res/drawable/button.xml" value="0.2875" />
