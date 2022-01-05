@@ -13,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Apkpoloskuy">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatusPengirimanActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".KeranjangActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetailBarangActivity"
             android:exported="false" />
         <activity
             android:name=".CheckoutActivity"
@@ -31,7 +34,13 @@
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".DetailBarangActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.RVBarang"
+            android:exported="true" />
+        <activity
+            android:name=".NavMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

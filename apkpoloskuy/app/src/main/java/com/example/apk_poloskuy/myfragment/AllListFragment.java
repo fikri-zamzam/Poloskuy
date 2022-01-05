@@ -1,5 +1,6 @@
 package com.example.apk_poloskuy.myfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.apk_poloskuy.NavMainActivity;
 import com.example.apk_poloskuy.R;
+
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,11 +61,21 @@ public class AllListFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+Button btnNav;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_all_list,container,false);
+        btnNav=view.findViewById(R.id.butonToNav);
+        btnNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent tui=new Intent(getActivity(), NavMainActivity.class);
+                startActivity(tui);
+            }
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_all_list, container, false);
+        return view;
     }
 }
