@@ -13,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavMainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemReselectedListener {
     private BottomNavigationView menu_bawah;
-    private TextView hh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,7 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
        switch (item.getItemId()){
            case R.id.nav_home:
-               Intent intent = new Intent(NavMainActivity.this,KeranjangActivity.class);
+               Intent intent = new Intent(NavMainActivity.this,NavMainActivity.class);
                startActivity(intent);
                break;
            case R.id.all_list:
@@ -38,7 +38,7 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
                startActivity(inte);
                break;
            case R.id.my_setting:
-               Intent ente=new Intent(NavMainActivity.this,StatusPengirimanActivity.class);
+               Intent ente=new Intent(NavMainActivity.this,SettingMainActivity.class);
                startActivity(ente);
                break;
        }
@@ -50,7 +50,7 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
     public void onNavigationItemReselected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_home:
-                Intent intent = new Intent(NavMainActivity.this,KeranjangActivity.class);
+                Intent intent = new Intent(NavMainActivity.this,NavMainActivity.class);
                 startActivity(intent);
                 break;
             case R.id.all_list:
@@ -58,7 +58,7 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
                 startActivity(inte);
                 break;
             case R.id.my_setting:
-                Intent ente=new Intent(NavMainActivity.this,StatusPengirimanActivity.class);
+                Intent ente=new Intent(NavMainActivity.this,SettingMainActivity.class);
                 startActivity(ente);
                 break;
         }
