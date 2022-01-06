@@ -6,9 +6,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.RVBarang">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="411dp"
+        android:layout_height="65dp"
+        android:background="@color/charcoal"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/arrowKembali"
+                android:layout_width="12.79dp"
+                android:layout_height="20.12dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_back" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="List Produk"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerview"
-        tools:listitem="@layout/rowlistbarang"/>
+        android:padding="3dp"
+        tools:listitem="@layout/rowlistbarang" />
 </LinearLayout>

@@ -2,12 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/card"
         android:layout_marginTop="10dp"
+        app:cardCornerRadius="9dp"
 
         >
 
@@ -18,7 +19,7 @@
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/RVimgPrdk"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
