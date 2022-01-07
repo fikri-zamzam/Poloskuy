@@ -11,9 +11,9 @@ import android.widget.TextView;
 import com.example.apk_poloskuy.Activity.RVBarang;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class NavMainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemReselectedListener {
+public class NavMainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private BottomNavigationView menu_bawah;
-
+    private TextView hh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
 
         menu_bawah=findViewById(R.id.menu_bawah);
 
-        menu_bawah.setOnNavigationItemReselectedListener(this);
+        menu_bawah.setOnNavigationItemSelectedListener(this);
 
 
     }
@@ -38,7 +38,7 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
                startActivity(inte);
                break;
            case R.id.my_setting:
-               Intent ente=new Intent(NavMainActivity.this,SettingMainActivity.class);
+               Intent ente=new Intent(NavMainActivity.this,MainActivitySetting.class);
                startActivity(ente);
                break;
        }
@@ -46,22 +46,5 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
         return true;
     }
 
-    @Override
-    public void onNavigationItemReselected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.nav_home:
-                Intent intent = new Intent(NavMainActivity.this,NavMainActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.all_list:
-                Intent inte=new Intent(NavMainActivity.this,RVBarang.class);
-                startActivity(inte);
-                break;
-            case R.id.my_setting:
-                Intent ente=new Intent(NavMainActivity.this,SettingMainActivity.class);
-                startActivity(ente);
-                break;
-        }
 
-    }
 }

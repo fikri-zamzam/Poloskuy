@@ -92,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             if (jsonObject.optString("success").equals("1")) {
                                 JSONObject jsonObject1 = jsonObject.getJSONObject("details");
+                                sharedPrefrencesHelper.setId_user(jsonObject1.getString("id_user"));
                                 sharedPrefrencesHelper.setEmail(jsonObject1.getString("email"));
                                 sharedPrefrencesHelper.setPassword(jsonObject1.getString("password"));
                                 sharedPrefrencesHelper.setFullname(jsonObject1.getString("user_fullname"));
@@ -101,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                                 sharedPrefrencesHelper.setStatus("1");
 
                                 Toast.makeText(LoginActivity.this, "Login Successfully! ", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getBaseContext(), DashboardActivity.class));
+                                startActivity(new Intent(getBaseContext(), NavMainActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();

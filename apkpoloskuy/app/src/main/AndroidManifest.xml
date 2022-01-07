@@ -13,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Apkpoloskuy">
         <activity
-            android:name=".SettingMainActivity"
+            android:name=".Activity.BarangDiterima"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivitySetting"
             android:exported="false" />
         <activity
             android:name=".DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".StatusPengirimanActivity"
+            android:name=".Activity.RVStatusPengiriman"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

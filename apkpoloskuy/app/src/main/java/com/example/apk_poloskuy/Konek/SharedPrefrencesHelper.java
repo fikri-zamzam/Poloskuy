@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 public class SharedPrefrencesHelper {
     private SharedPreferences sharedPreferences;
     private Context context;
-    private String email = "email",password = "password",fullname = "fullname",
+    private String id_user= "id_user", email = "email",password = "password",fullname = "fullname",
                    noTelp = "noTelp",gender = "jk", alamat = "alamat", status = "status";
     public SharedPrefrencesHelper(Context context) {
         this.sharedPreferences = context.getSharedPreferences("login_session",
@@ -13,6 +13,10 @@ public class SharedPrefrencesHelper {
         this.context = context;
     }
     //getter
+    public String getId_user() {
+        return sharedPreferences.getString(id_user, "");
+    }
+
     public String getEmail() {
         return sharedPreferences.getString(email, "");
     }
@@ -42,6 +46,12 @@ public class SharedPrefrencesHelper {
     }
 
     //setter
+
+    public void setId_user(String id_user) {
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString(this.id_user, id_user);
+        edit.commit();
+    }
 
     public void setEmail(String email) {
         SharedPreferences.Editor edit = sharedPreferences.edit();

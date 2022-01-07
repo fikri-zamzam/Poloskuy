@@ -1,14 +1,16 @@
-package com.example.apk_poloskuy;
+package com.example.apk_poloskuy.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class StatusPengirimanActivity extends AppCompatActivity {
+import com.example.apk_poloskuy.R;
+
+public class BarangDiterima extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_status_pengiriman);
+        setContentView(R.layout.activity_barang_diterima);
     }
 }

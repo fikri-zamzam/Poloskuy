@@ -6,14 +6,19 @@ import android.os.Parcelable;
 
 public class ModelBarang implements Parcelable {
 
-    String img,namaPrdk,descPrdk;
+    String idPrdk,img,namaPrdk,descPrdk;
     Double hargaPrdk;
-    public ModelBarang(String gambar, String nama, String deskripsi,Double harga) {
+    public ModelBarang(String id,String gambar, String nama, String deskripsi,Double harga) {
+        idPrdk = id;
         img = gambar;
         namaPrdk = nama;
         descPrdk = deskripsi;
         hargaPrdk = harga;
     }
+
+    public String getIdPrdk() {return idPrdk;}
+
+    public void setIdPrdk(String idPrdk) {this.idPrdk = idPrdk;}
 
     public String getImg() {
         return img;
@@ -54,6 +59,7 @@ public class ModelBarang implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(idPrdk);
         dest.writeString(img);
         dest.writeString(namaPrdk);
         dest.writeString(descPrdk);
@@ -61,6 +67,7 @@ public class ModelBarang implements Parcelable {
     }
 
     public ModelBarang(Parcel in) {
+        idPrdk = in.readString();
         img = in.readString();
         namaPrdk = in.readString();
         descPrdk = in.readString();

@@ -7,12 +7,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.apk_poloskuy.Activity.RVBarang;
+import com.example.apk_poloskuy.Konek.SharedPrefrencesHelper;
 import com.example.apk_poloskuy.Model.ModelBarang;
+import com.example.apk_poloskuy.myfragment.SettingFragment;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -23,8 +28,10 @@ public class DetailBarangActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         TextView nama,harga,desc;
         ImageView gambar;
+        Button btnWa, btnBeli;
+        ImageButton btnBack;
 
-        Button btnWa;
+        SharedPrefrencesHelper sharedPrefrencesHelper;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_barang);
 
@@ -32,12 +39,12 @@ public class DetailBarangActivity extends AppCompatActivity {
         harga = findViewById(R.id.TxtDetHarga);
         desc = findViewById(R.id.TxtDetDesc);
         gambar = findViewById(R.id.imgDetPrdk);
+        btnBack = findViewById(R.id.backTolist);
 
         Intent intent = getIntent();
         ModelBarang barang = intent.getParcelableExtra("BARANG");
 
         nama.setText(barang.getNamaPrdk());
-//        harga.setText(Double.toString(barang.getHargaPrdk()));
         harga.setText(Rupiah(barang.getHargaPrdk()));
         desc.setText(barang.getDescPrdk());
 
@@ -58,13 +65,43 @@ public class DetailBarangActivity extends AppCompatActivity {
                 String link= null;
                 try {
                     link = "https://api.whatsapp.com/send?phone=+6281249345670"+"&text=Hallo.\n" +
-                            "Saya ingin bertanya ketersediaan item di POLOSKUY!";
+                            "Saya ingin bertanya ketersediaan item *"+ barang.getNamaPrdk()+ "* di POLOSKUY!";
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
                     startActivity(intent);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(getApplication(), "Gagal membuka WhatsApp", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        sharedPrefrencesHelper = new SharedPrefrencesHelper(DetailBarangActivity.this);
+        String status = sharedPrefrencesHelper.getStatus();
+        btnBeli = findViewById(R.id.btnBeli);
+        btnBeli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (status.equals("0")) {
+                    Intent intent = new Intent(DetailBarangActivity.this, LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Intent intent = new Intent(DetailBarangActivity.this, CheckoutActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+                    intent.putExtra("BARANG", barang);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+
+        //back to list
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backList = new Intent(DetailBarangActivity.this, RVBarang.class);
+                startActivity(backList);
             }
         });
 

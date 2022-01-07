@@ -17,10 +17,13 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.apk_poloskuy.Konek.DbContract;
+import com.example.apk_poloskuy.Konek.SharedPrefrencesHelper;
 import com.example.apk_poloskuy.Konek.VolleyConnection;
 
 import org.json.JSONException;
@@ -34,6 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText email,password,fullname,noTelp,gender,alamat;
     Button register;
     ProgressDialog progressDialog;
+
+    private RequestQueue rQueue;
+    private SharedPrefrencesHelper sharedPrefrencesHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String sAlamat   = alamat.getText().toString();
 
 
-                CreateDataToServer(sEmail, sPassword,sFullname,sNoTelp,sGender,sAlamat);
-                Intent registerIntent = new Intent(RegisterActivity.this, MainActivity.class);
-                startActivity(registerIntent);
+                AddUser(sEmail, sPassword,sFullname,sNoTelp,sGender,sAlamat);
 
             }
         });
@@ -80,57 +84,52 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void CreateDataToServer( final String email, final String password,final String fullname,
-                                    final String noTelp,final String gender,final String alamat) {
-        if (checkNetworkConnection()) {
-            progressDialog.show();
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, DbContract.SERVER_REGISTER_URL,
-                    new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                String resp = jsonObject.getString("server_response");
-                                if (resp.equals("[{\"status\":\"OK\"}]")) {
-                                    Toast.makeText(getApplicationContext(), "Registrasi Berhasil", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(getApplicationContext(), resp, Toast.LENGTH_SHORT).show();
-                                }
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+    private void AddUser(String sEmail, String sPassword, String sFullname, String sNoTelp, String sGender, String sAlamat) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, getResources().getString(R.string.url) + "register.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        rQueue.getCache().clear();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            if (jsonObject.optString("success").equals("1")) {
+                                Toast.makeText(RegisterActivity.this, "Register Berhasil! ", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(RegisterActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
                             }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                }
-            }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("email", email);
-                    params.put("password", password);
-                    params.put("fullname", fullname);
-                    params.put("noTelp", noTelp);
-                    params.put("jk", gender);
-                    params.put("alamat", alamat);
-                    return params;
-                }
-            };
-
-            VolleyConnection.getInstance(RegisterActivity.this).addToRequestQue(stringRequest);
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.cancel();
-                }
-            }, 2000);
-        } else {
-            Toast.makeText(getApplicationContext(), "Tidak ada koneksi internet", Toast.LENGTH_SHORT).show();
-        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("email", sEmail);
+                params.put("password", sPassword);
+                params.put("fullname", sFullname);
+                params.put("noTelp", sNoTelp);
+                params.put("jk", sGender);
+                params.put("alamat", sAlamat);
+                return params;
+            }
+        };
+        rQueue = Volley.newRequestQueue(RegisterActivity.this);
+        rQueue.add(stringRequest);
     }
+
+
+
 
     /*Fungsi untuk mengecek ketersedian jaringan internet*/
     public boolean checkNetworkConnection() {

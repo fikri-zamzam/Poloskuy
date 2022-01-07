@@ -19,12 +19,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <!--button back-->
-            <ImageButton
-                android:id="@+id/arrowBackc"
-                android:layout_width="11.67dp"
-                android:layout_height="19.8dp"
-                android:src="@drawable/ic_arrow_back"
-                android:layout_gravity="center"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

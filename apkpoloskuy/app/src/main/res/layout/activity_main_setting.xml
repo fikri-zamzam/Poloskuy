@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".myfragment.SettingFragment">
-    <!--toolbar-->
+    tools:context=".MainActivitySetting">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="411dp"
@@ -19,17 +19,13 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <!--button back-->
-            <ImageButton
-                android:id="@+id/arrowBackc"
-                android:layout_width="11.67dp"
-                android:layout_height="19.8dp"
-                android:src="@drawable/ic_arrow_back"
-                android:layout_gravity="center"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Setting"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
@@ -139,5 +135,29 @@
         android:textStyle="bold"
         app:backgroundTint="@color/design_default_color_error" />
 
+    <Button
+        android:id="@+id/btn_cekBelanja"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:text="Cek riwayat"
+        android:textStyle="bold"
+        app:backgroundTint="@color/black" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/menu_bawahS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:foregroundGravity="bottom"
+            app:menu="@menu/bottom_navigation" />
+
+
+    </FrameLayout>
 
 </LinearLayout>

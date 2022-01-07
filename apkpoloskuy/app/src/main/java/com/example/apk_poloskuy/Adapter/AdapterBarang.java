@@ -59,18 +59,6 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.ViewHolder
             }
         });
 
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Book book = new Book(mBkTitle.getText().toString(),
-//                        mBkAuthor.getText().toString());
-//
-//                Intent intent = new Intent(MainActivity.this, BookActivity.class);
-//                intent.putExtra("Book", book);
-//                startActivity(intent);
-//            }
-//        });
     }
     @Override
     public int getItemCount() {

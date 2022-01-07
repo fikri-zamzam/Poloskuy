@@ -19,16 +19,16 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/arBackToRv"
-                android:layout_width="12.79dp"
-                android:layout_height="20.12dp"
+                android:id="@+id/backTolist"
+                android:layout_width="13dp"
+                android:layout_height="22dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_arrow_back" />
 
             <EditText
                 android:layout_width="200dp"
                 android:layout_height="35dp"
-                android:layout_marginLeft="18dp"
+                android:layout_marginLeft="38dp"
                 android:background="@drawable/edttv"
                 android:id="@+id/cari"
                 android:hint="Cari disini"
@@ -130,8 +130,8 @@
 
     <TextView
         android:id="@+id/TxtDetDesc"
-        android:layout_width="293dp"
-        android:layout_height="79dp"
+        android:layout_width="292dp"
+        android:layout_height="210dp"
         android:layout_marginTop="228dp"
         android:text="Kaos hitam Polos Unisex  Pria Wanita All Size Tersedia dalam berbagai ukuran, Bahannya yang lembut membuat kaos ini sering menjadi incaran banyak orang"
         android:textColor="@color/black"
@@ -155,11 +155,11 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnBeli"
         android:layout_width="170dp"
         android:layout_height="39dp"
         android:layout_marginBottom="4dp"
-        android:text="+Keranjang"
+        android:text="Beli Sekarang"
         android:textSize="16dp"
         android:textColor="@color/white"
         android:backgroundTint="#0BB91C"

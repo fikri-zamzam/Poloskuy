@@ -60,7 +60,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/TValamat_ckt"
         android:layout_width="290dp"
         android:layout_height="60dp"
         android:gravity="center_horizontal"
@@ -129,7 +129,7 @@
 
     <!--total bayar-->
     <TextView
-        android:id="@+id/total_bayar"
+        android:id="@+id/TVtotal_bayar_ckt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
