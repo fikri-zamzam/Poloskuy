@@ -6,7 +6,7 @@ public class SharedPrefrencesHelper {
     private SharedPreferences sharedPreferences;
     private Context context;
     private String id_user= "id_user", email = "email",password = "password",fullname = "fullname",
-                   noTelp = "noTelp",gender = "jk", alamat = "alamat", status = "status";
+                   noTelp = "noTelp",gender = "jk", alamat = "alamat", status = "status", img="img";
     public SharedPrefrencesHelper(Context context) {
         this.sharedPreferences = context.getSharedPreferences("login_session",
                 Context.MODE_PRIVATE);
@@ -45,6 +45,10 @@ public class SharedPrefrencesHelper {
         return sharedPreferences.getString(status, "0");
     }
 
+    public String getImguser() {
+        return sharedPreferences.getString(img, "0");
+    }
+
     //setter
 
     public void setId_user(String id_user) {
@@ -79,6 +83,11 @@ public class SharedPrefrencesHelper {
 
     public void setGender(String gender) {
         SharedPreferences.Editor edit = sharedPreferences.edit();
+        if (gender.equals("L")) {
+            gender = "Laki-laki";
+        } else {
+            gender = "Perempuan";
+        }
         edit.putString(this.gender, gender);
         edit.commit();
     }
@@ -92,6 +101,12 @@ public class SharedPrefrencesHelper {
     public void setStatus(String status) {
         SharedPreferences.Editor edit = sharedPreferences.edit();
         edit.putString(this.status, status);
+        edit.commit();
+    }
+
+    public void setImguser(String img) {
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putString(this.img, img);
         edit.commit();
     }
 }

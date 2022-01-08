@@ -13,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.apk_poloskuy.Activity.BarangDiterima;
+import com.example.apk_poloskuy.DashboardActivity;
 import com.example.apk_poloskuy.DetailBarangActivity;
+import com.example.apk_poloskuy.KonfirmasiPesananActivity;
 import com.example.apk_poloskuy.Model.ModelStatusKirim;
 import com.example.apk_poloskuy.R;
 
@@ -57,7 +60,9 @@ public class AdapterStatusKirim extends RecyclerView.Adapter<AdapterStatusKirim.
         holder.sampai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(holder.itemView.getContext(), KonfirmasiPesananActivity.class );
+                intent.putExtra("STATUS", status);
+                holder.itemView.getContext().startActivity(intent);
             }
         });
     }

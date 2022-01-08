@@ -8,7 +8,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.apk_poloskuy.Adapter.AdapterStatusKirim;
 import com.example.apk_poloskuy.CheckoutActivity;
 import com.example.apk_poloskuy.Konek.SharedPrefrencesHelper;
+import com.example.apk_poloskuy.LoginActivity;
 import com.example.apk_poloskuy.MainActivitySetting;
 import com.example.apk_poloskuy.Model.ModelStatusKirim;
 import com.example.apk_poloskuy.NavMainActivity;
@@ -32,19 +35,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class RVStatusPengiriman extends AppCompatActivity {
+public class RVStatusPengiriman extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     List<ModelStatusKirim> postStatus=new ArrayList<>();
     String url="https://ws-tif.com/poloskuy/system/API/pantauStatus.php";
     AdapterStatusKirim adapter;
     List<ModelStatusKirim> filterList=new ArrayList<>();
     RecyclerView recyclerView;
     EditText search;
-    BottomNavigationView btnBawahRV;
+    BottomNavigationView btnBawahRVS;
+
     private SharedPrefrencesHelper sharedPrefrencesHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rv_status_pengiriman);
+
+
+
+btnBawahRVS=findViewById(R.id.menu_bawahRVSP);
+btnBawahRVS.setOnNavigationItemSelectedListener(this);
+
 
         sharedPrefrencesHelper = new SharedPrefrencesHelper(RVStatusPengiriman.this);
         recyclerView=findViewById(R.id.RVPesanan);
@@ -52,6 +62,8 @@ public class RVStatusPengiriman extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         GetData();
+
+
     }
 
     private void GetData() {
@@ -84,7 +96,6 @@ public class RVStatusPengiriman extends AppCompatActivity {
                 adapter=new AdapterStatusKirim(getApplicationContext(),postStatus);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                Toast.makeText(RVStatusPengiriman.this, "Success", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -94,5 +105,29 @@ public class RVStatusPengiriman extends AppCompatActivity {
             }
         });
         requestQueue.add(jsonArrayRequest);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                Intent intent = new Intent(RVStatusPengiriman.this, NavMainActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.all_list:
+                Intent inte=new Intent(RVStatusPengiriman.this, RVBarang.class);
+                startActivity(inte);
+                break;
+            case R.id.my_setting:
+                Intent ente=new Intent(RVStatusPengiriman.this,MainActivitySetting.class);
+                startActivity(ente);
+                break;
+            case R.id.pesananku:
+                Intent mPesanan = new Intent(RVStatusPengiriman.this,RVStatusPengiriman.class);
+                startActivity(mPesanan);
+                break;
+        }
+        return true;
     }
 }

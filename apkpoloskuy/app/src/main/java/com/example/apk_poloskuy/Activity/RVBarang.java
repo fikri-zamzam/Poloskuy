@@ -2,11 +2,14 @@ package com.example.apk_poloskuy.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class RVBarang extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     List<ModelBarang> postList=new ArrayList<>();
@@ -37,6 +41,8 @@ public class RVBarang extends AppCompatActivity implements BottomNavigationView.
     RecyclerView recyclerView;
     EditText search;
     BottomNavigationView btnBawahRV;
+    SearchView searchView;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,12 +50,34 @@ public class RVBarang extends AppCompatActivity implements BottomNavigationView.
 
         btnBawahRV =findViewById(R.id.menu_bawahRV);
         btnBawahRV.setOnNavigationItemSelectedListener(this);
-
+        searchView=findViewById(R.id.search_item);
         recyclerView=findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
         GetData();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                newText =newText.toLowerCase();
+                List<ModelBarang> modelBarangs = new ArrayList<>();
+                for (ModelBarang mode: postList ){
+                    String  nama = mode.getNamaPrdk().toLowerCase();
+                    if (nama.contains(newText)){
+                        modelBarangs.add(mode);
+                    }
+                }
+                adapter.FilteredModel(modelBarangs);
+                return true;
+            }
+        });
+
     }
 
     private void GetData() {
@@ -68,6 +96,7 @@ public class RVBarang extends AppCompatActivity implements BottomNavigationView.
                                 jsonObject.getString("img"),
                                 jsonObject.getString("nama_produk"),
                                 jsonObject.getString("deskripsi"),
+                                jsonObject.getString("stok"),
                                 jsonObject.getDouble("harga")
                         ));
                     } catch (JSONException e) {
@@ -78,7 +107,6 @@ public class RVBarang extends AppCompatActivity implements BottomNavigationView.
                 adapter=new AdapterBarang(getApplicationContext(),postList);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                Toast.makeText(RVBarang.this, "Success", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -90,8 +118,7 @@ public class RVBarang extends AppCompatActivity implements BottomNavigationView.
         requestQueue.add(jsonArrayRequest);
     }
 
-
-
+//navigasi
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -108,8 +135,23 @@ public class RVBarang extends AppCompatActivity implements BottomNavigationView.
                 Intent ente=new Intent(RVBarang.this,MainActivitySetting.class);
                 startActivity(ente);
                 break;
+            case R.id.pesananku:
+                Intent mPesanan = new Intent(RVBarang.this,RVStatusPengiriman.class);
+                startActivity(mPesanan);
+                break;
         }
 
         return true;
     }
+
+
+    private void filter(String newText){
+        List<ModelBarang> filteredList =new ArrayList<>();
+        for (ModelBarang model:postList){
+            if (model.getNamaPrdk().toLowerCase().contains(newText.toLowerCase())){
+                filteredList.add(model);
+            }
+        }
+        adapter.FilteredModel(filteredList);
+   }
 }

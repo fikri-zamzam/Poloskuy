@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.apk_poloskuy.Activity.RVBarang;
 import com.example.apk_poloskuy.Konek.DbContract;
 import com.example.apk_poloskuy.Konek.SharedPrefrencesHelper;
 import com.example.apk_poloskuy.Konek.VolleyConnection;
@@ -36,7 +39,8 @@ import java.util.Map;
 
 public class CheckoutActivity extends AppCompatActivity {
     TextView totalBayar,alamat;
-    Button selesai;
+    Button selesai, chat;
+    ImageButton btnBack;
     ProgressDialog progressDialog;
 
     private RequestQueue rQueue;
@@ -49,6 +53,8 @@ public class CheckoutActivity extends AppCompatActivity {
         totalBayar = findViewById(R.id.TVtotal_bayar_ckt);
         alamat = findViewById(R.id.TValamat_ckt);
         selesai = findViewById(R.id.btnfinish);
+        chat=findViewById(R.id.btnChatdiChck);
+        btnBack=findViewById(R.id.arrowBacktoDtl);
 
         progressDialog = new ProgressDialog(CheckoutActivity.this);
         sharedPrefrencesHelper = new SharedPrefrencesHelper(CheckoutActivity.this);
@@ -77,6 +83,33 @@ public class CheckoutActivity extends AppCompatActivity {
 
 
         });
+        //kembali
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent kembali = new Intent(CheckoutActivity.this, RVBarang.class);
+                startActivity(kembali);
+            }
+        });
+
+        //konfirmasi pesanan
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String linkKonfirmasi= null;
+                try {
+                    linkKonfirmasi = "https://api.whatsapp.com/send?phone=+6281249345670"+"&text=Hallo.\n" +
+                            "Saya ingin mengkonfirmasi tatacara pembayaran untuk item *"+ barang.getNamaPrdk()+ "* di POLOSKUY!";
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkKonfirmasi));
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(getApplication(), "Gagal membuka WhatsApp", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
     private void AddTransaksi(String id_user, String id_produk, String total_harga) {
@@ -90,9 +123,6 @@ public class CheckoutActivity extends AppCompatActivity {
                             if (jsonObject.optString("success").equals("1")) {
 
                                 Toast.makeText(CheckoutActivity.this, "Transaksi Berhasil! ", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(CheckoutActivity.this,DetailBarangActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
-                                startActivity(intent);
                                 finish();
                             } else {
                                 Toast.makeText(CheckoutActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();

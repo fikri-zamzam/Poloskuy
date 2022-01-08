@@ -12,9 +12,15 @@
         android:title="list"/>
 
     <item
+        android:id="@+id/pesananku"
+        android:title="pesanan"
+        android:icon="@drawable/ic_bcart"/>
+
+    <item
         android:id="@+id/my_setting"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="setting"/>
+
 
 
 </menu>

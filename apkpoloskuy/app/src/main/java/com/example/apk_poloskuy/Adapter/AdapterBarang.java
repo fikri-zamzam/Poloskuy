@@ -18,6 +18,7 @@ import com.example.apk_poloskuy.Model.ModelBarang;
 import com.example.apk_poloskuy.R;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -64,9 +65,16 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.ViewHolder
     public int getItemCount() {
         return postList.size();
     }
+    //tes pencarian
+    public void FilteredModel(List<ModelBarang> filterModel){
+    postList = new ArrayList<>();
+    postList.addAll(filterModel);
+    notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgprdk;
-        TextView namaprdk,descprdk,hargaprdk;
+        TextView namaprdk,stokprdk,hargaprdk;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

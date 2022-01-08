@@ -99,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                                 sharedPrefrencesHelper.setNomorTelfon(jsonObject1.getString("no_telp"));
                                 sharedPrefrencesHelper.setGender(jsonObject1.getString("gender"));
                                 sharedPrefrencesHelper.setAlamat(jsonObject1.getString("alamat"));
+                                sharedPrefrencesHelper.setImguser(jsonObject1.getString("img"));
                                 sharedPrefrencesHelper.setStatus("1");
 
                                 Toast.makeText(LoginActivity.this, "Login Successfully! ", Toast.LENGTH_SHORT).show();

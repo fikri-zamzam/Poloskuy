@@ -19,21 +19,16 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/arrowBackc"
-                android:layout_width="12.79dp"
-                android:layout_height="20.12dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_arrow_back" />
 
             <TextView
                 android:layout_width="154dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:gravity="center"
                 android:text="Pesanan Saya"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="22dp" />
         </LinearLayout>
@@ -42,7 +37,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RVPesanan"
         android:layout_width="match_parent"
-        android:layout_height="666dp"
+        android:layout_height="607dp"
         android:layout_below="@+id/toolbar"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -53,5 +48,20 @@
         android:layout_marginBottom="0dp"
         android:padding="5dp"
         tools:listitem="@layout/itempesananku" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu_bawahRVSP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="677dp"
+        android:layout_marginBottom="-2dp"
+        android:foregroundGravity="bottom"
+        app:menu="@menu/bottom_navigation"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="-2dp" />
 
 </RelativeLayout>

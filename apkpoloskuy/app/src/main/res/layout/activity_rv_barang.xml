@@ -28,14 +28,21 @@
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"/>
+
+
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/search_item"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="609dp"
+        android:layout_height="578dp"
         android:padding="3dp"
         tools:listitem="@layout/rowlistbarang" />
 

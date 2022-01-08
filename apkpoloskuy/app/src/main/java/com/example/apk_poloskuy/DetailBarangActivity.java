@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.apk_poloskuy.Activity.RVBarang;
 import com.example.apk_poloskuy.Konek.SharedPrefrencesHelper;
 import com.example.apk_poloskuy.Model.ModelBarang;
-import com.example.apk_poloskuy.myfragment.SettingFragment;
+//import com.example.apk_poloskuy.myfragment.SettingFragment;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -26,7 +26,7 @@ public class DetailBarangActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        TextView nama,harga,desc;
+        TextView nama,harga,desc,stok;
         ImageView gambar;
         Button btnWa, btnBeli;
         ImageButton btnBack;
@@ -40,6 +40,7 @@ public class DetailBarangActivity extends AppCompatActivity {
         desc = findViewById(R.id.TxtDetDesc);
         gambar = findViewById(R.id.imgDetPrdk);
         btnBack = findViewById(R.id.backTolist);
+        stok   = findViewById(R.id.myStok);
 
         Intent intent = getIntent();
         ModelBarang barang = intent.getParcelableExtra("BARANG");
@@ -47,6 +48,7 @@ public class DetailBarangActivity extends AppCompatActivity {
         nama.setText(barang.getNamaPrdk());
         harga.setText(Rupiah(barang.getHargaPrdk()));
         desc.setText(barang.getDescPrdk());
+        stok.setText(barang.getStokPrdk());
 
         String url2 = "https://ws-tif.com/poloskuy/images/db/produk/"+barang.getImg();
         Glide.with(this)

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.apk_poloskuy.Activity.RVBarang;
+import com.example.apk_poloskuy.Activity.RVStatusPengiriman;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavMainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +41,11 @@ public class NavMainActivity extends AppCompatActivity implements BottomNavigati
            case R.id.my_setting:
                Intent ente=new Intent(NavMainActivity.this,MainActivitySetting.class);
                startActivity(ente);
+               break;
+
+           case R.id.pesananku:
+               Intent pesanan=new Intent(NavMainActivity.this, RVStatusPengiriman.class);
+               startActivity(pesanan);
                break;
        }
        

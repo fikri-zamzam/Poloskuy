@@ -25,24 +25,20 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_arrow_back" />
 
-            <EditText
-                android:layout_width="200dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="38dp"
-                android:background="@drawable/edttv"
-                android:id="@+id/cari"
-                android:hint="Cari disini"
+            <TextView
+                android:layout_width="154dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:text="Detail Barang"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="22dp"
                 />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imgb"
-                android:src="@drawable/ic_baseline_shopping_cart_24"
-                android:layout_marginLeft="15dp"
-                android:layout_gravity="center"
-                />
+
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -113,6 +109,37 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         tools:ignonore="MissingConstraint" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Stok :"
+        android:textColor="@color/black"
+        android:id="@+id/tvStok"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toStartOf="@+id/myStok"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toEndOf="@+id/TxtDetHarga"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/myStok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="60"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/TxtDetHarga"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        />
 
     <TextView
         android:id="@+id/textView9"

@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Apkpoloskuy">
         <activity
+            android:name=".KonfirmasiPesananActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityCoba"
+            android:exported="false" />
+        <activity
             android:name=".Activity.BarangDiterima"
             android:exported="false" />
         <activity

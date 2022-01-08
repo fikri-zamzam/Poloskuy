@@ -21,9 +21,9 @@
             android:orientation="horizontal">
             <!--button back-->
             <ImageButton
-                android:id="@+id/arrowBack"
-                android:layout_width="11.67dp"
-                android:layout_height="19.8dp"
+                android:id="@+id/arrowBacktoDtl"
+                android:layout_width="12dp"
+                android:layout_height="21dp"
                 android:src="@drawable/ic_arrow_back"
                 android:layout_gravity="center"/>
             <TextView
@@ -31,10 +31,11 @@
                 android:layout_height="wrap_content"
                 android:text="Checkout"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp" />
+                android:layout_marginLeft="15dp" />
         </LinearLayout>
 
 
@@ -165,7 +166,7 @@
 
     <!--buton chat-->
     <Button
-        android:id="@+id/btnChat"
+        android:id="@+id/btnChatdiChck"
         android:layout_width="190dp"
         android:layout_height="69dp"
         android:layout_marginEnd="4dp"
