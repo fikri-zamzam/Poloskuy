@@ -38,61 +38,89 @@
         </LinearLayout>
 
         </androidx.appcompat.widget.Toolbar>
-
-
-        <ImageView
-            android:layout_width="411dp"
-            android:layout_height="192dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="-2dp"
-            android:layout_marginTop="66dp"
-            android:src="@drawable/carashboard"
-            android:layout_marginLeft="-2dp"
-            android:layout_alignParentLeft="true" />
-
-
-        <TextView
+        <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="265dp"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:fontFamily="sans-serif-smallcaps"
-            android:text="Selamat datang di aplikasi POLOSKUY" />
+            android:layout_marginTop="62dp"
+            android:layout_marginBottom="56dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="411dp"
+                            android:layout_height="200dp"
+                            android:src="@drawable/carashboard" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/mslight"
+                            android:gravity="center_horizontal"
+                            android:text="Selamat datang di aplikasi POLOSKUY"
+                            android:textAlignment="center"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="200dp"
+                            android:layout_height="110dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:outlineAmbientShadowColor="@color/black"
+                            app:cardCornerRadius="10dp">
+
+                                <ImageView
+                                    android:layout_width="250dp"
+                                    android:layout_height="130dp"
+                                    android:layout_marginLeft="-30dp"
+                                    android:src="@drawable/banneerpertama" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="222dp"
+                            android:layout_marginTop="-100dp"
+                            android:layout_marginRight="25dp"
+                            android:fontFamily="@font/msmedium"
+                            android:gravity="start"
+                            android:text="Pilih item baru semaumu dengan gaya favoritmu"
+                            android:textAlignment="viewStart"
+                            android:textSize="18sp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="277dp"
+                            android:layout_height="187dp"
+                            android:layout_marginLeft="120dp"
+                            android:layout_marginTop="50dp"
+                            app:cardCornerRadius="20dp">
+
+                                <ImageView
+                                    android:layout_width="350dp"
+                                    android:layout_height="270dp"
+                                    android:layout_marginTop="-50dp"
+                                    android:src="@drawable/bannerkedua" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="110dp"
+                            android:layout_height="70dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginTop="-140dp"
+                            android:fontFamily="@font/msmedium"
+                            android:gravity="end"
+                            android:text="Pilih OOTD style terbaru dan kreasikan sesukamu"
+                            android:textAlignment="textEnd" />
 
 
-        <ImageView
-            android:layout_width="277dp"
-            android:layout_height="185dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="290dp"
-            android:layout_marginEnd="133dp"
-            android:layout_marginRight="133dp"
-            android:src="@drawable/banneerpertama" />
+                </LinearLayout>
+        </ScrollView>
 
-        <ImageView
-            android:layout_width="277dp"
-            android:layout_height="187dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="157dp"
-            android:layout_marginLeft="157dp"
-            android:layout_marginTop="487dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginRight="2dp"
-            android:src="@drawable/bannerkedua" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/menu_bawah"
