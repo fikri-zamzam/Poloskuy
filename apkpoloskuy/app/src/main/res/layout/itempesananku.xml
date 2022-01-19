@@ -55,7 +55,8 @@
                 android:textAlignment="center"
                 android:fontFamily="sans-serif-medium"
                 android:text="Nama Produk"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:gravity="center_horizontal" />
 
             <TextView
                 android:id="@+id/RVhargaPesanan"

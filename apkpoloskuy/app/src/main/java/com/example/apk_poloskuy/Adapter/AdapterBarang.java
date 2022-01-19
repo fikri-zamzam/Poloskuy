@@ -45,7 +45,7 @@ public class AdapterBarang extends RecyclerView.Adapter<AdapterBarang.ViewHolder
         String url2 = "https://ws-tif.com/poloskuy/images/db/produk/"+postList.get(position).getImg();
         Glide.with(context)
                 .load(url2)
-                .override(320, 210)
+//                .override(320, 210)
                 .centerCrop()
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(holder.imgprdk);

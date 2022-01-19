@@ -52,10 +52,14 @@ public class AdapterStatusKirim extends RecyclerView.Adapter<AdapterStatusKirim.
         String url2 = "https://ws-tif.com/poloskuy/images/db/produk/"+postStatus.get(position).getImgBrgStat();
         Glide.with(context)
                 .load(url2)
-                .override(150, 150)
+//                .override(150, 150)
                 .centerCrop()
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .into(holder.imgBrgstat);
+        holder.sampai.setVisibility(View.GONE);
+        if(postStatus.get(position).getStatusBrg().equals("Di Kirim")){
+            holder.sampai.setVisibility(View.VISIBLE);
+        }
 
         holder.sampai.setOnClickListener(new View.OnClickListener() {
             @Override

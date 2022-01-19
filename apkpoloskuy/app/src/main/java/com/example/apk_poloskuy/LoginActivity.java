@@ -99,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                                 sharedPrefrencesHelper.setNomorTelfon(jsonObject1.getString("no_telp"));
                                 sharedPrefrencesHelper.setGender(jsonObject1.getString("gender"));
                                 sharedPrefrencesHelper.setAlamat(jsonObject1.getString("alamat"));
-                                sharedPrefrencesHelper.setImguser(jsonObject1.getString("img"));
+//                                sharedPrefrencesHelper.setImguser(jsonObject1.getString("img"));
                                 sharedPrefrencesHelper.setStatus("1");
 
                                 Toast.makeText(LoginActivity.this, "Login Successfully! ", Toast.LENGTH_SHORT).show();
@@ -132,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onBackPressed() {
-        Intent intent = new Intent(this,DashboardActivity.class);
+        Intent intent = new Intent(this,NavMainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
         startActivity(intent);
         this.finish();

@@ -3,7 +3,6 @@ package com.example.apk_poloskuy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -33,7 +32,7 @@ public class MainActivitySetting extends AppCompatActivity implements BottomNavi
         btnNavS.setOnNavigationItemSelectedListener(this);
 
         SFemail = findViewById(R.id.email);
-        SFpass  = findViewById(R.id.pass);
+//        SFpass  = findViewById(R.id.pass);
         SFnama =  findViewById(R.id.nama);
         SFno_telp = findViewById(R.id.no_telp);
         SFgender = findViewById(R.id.gender);
@@ -56,7 +55,7 @@ public class MainActivitySetting extends AppCompatActivity implements BottomNavi
         SFemail.setText(sharedPrefrencesHelper.getEmail());
         SFnama.setText(sharedPrefrencesHelper.getFullname());
         SFno_telp.setText(sharedPrefrencesHelper.getNomorTelfon());
-        SFgender.setText(sharedPrefrencesHelper.getGender());
+        SFgender.setText(gender(sharedPrefrencesHelper.getGender()));
         SFalamat.setText(sharedPrefrencesHelper.getAlamat());
 
         String url2 = "https://ws-tif.com/poloskuy/images/db/user/"+sharedPrefrencesHelper.getImguser();
@@ -77,10 +76,10 @@ public class MainActivitySetting extends AppCompatActivity implements BottomNavi
                 sharedPrefrencesHelper.setNomorTelfon(null);
                 sharedPrefrencesHelper.setGender(null);
                 sharedPrefrencesHelper.setAlamat(null);
+                sharedPrefrencesHelper.setStatus("0");
                 startActivity(new Intent(MainActivitySetting.this, LoginActivity.class));
             }
         });
-
     }
 
 
@@ -107,5 +106,13 @@ public class MainActivitySetting extends AppCompatActivity implements BottomNavi
                 break;
         }
         return true;
+    }
+    public String gender(String gender){
+        if (gender.equals("L")) {
+            gender = "Laki-laki";
+        } else {
+            gender = "Perempuan";
+        }
+        return gender;
     }
 }

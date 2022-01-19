@@ -123,6 +123,10 @@ public class CheckoutActivity extends AppCompatActivity {
                             if (jsonObject.optString("success").equals("1")) {
 
                                 Toast.makeText(CheckoutActivity.this, "Transaksi Berhasil! ", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(CheckoutActivity.this,NavMainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+                                startActivity(intent);
                                 finish();
                             } else {
                                 Toast.makeText(CheckoutActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();

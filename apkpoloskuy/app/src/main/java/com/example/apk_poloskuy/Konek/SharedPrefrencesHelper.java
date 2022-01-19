@@ -83,11 +83,6 @@ public class SharedPrefrencesHelper {
 
     public void setGender(String gender) {
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        if (gender.equals("L")) {
-            gender = "Laki-laki";
-        } else {
-            gender = "Perempuan";
-        }
         edit.putString(this.gender, gender);
         edit.commit();
     }
